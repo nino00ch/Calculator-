@@ -1,0 +1,148 @@
+body {
+    background-color: #3b4664;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #252d44;
+    width: 320px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.calc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch span {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.theme-toggle {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: #181f32;
+    border-radius: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.theme-switch-input {
+    display: none;
+}
+
+.theme-switch-label {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 19px;
+    height: 19px;
+    background-color: #d03f2f;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.theme-switch-input:checked + .theme-switch-label {
+    transform: translateX(25px);
+}
+
+.theme-numbers span {
+    font-size: 14px;
+    margin-right: 4px;
+}
+.display {
+    background-color: #181f32;
+    color: #ffffff;
+    font-size: 32px;
+    text-align: right;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    background-color: #eae3d5;
+    border: none;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px #b4a597;
+    transition: 0.3s;
+}
+
+button:active {
+    box-shadow: 0 2px #b4a597;
+    transform: translateY(3px);
+}
+
+button.del, button.Big {
+    background-color: #647198;
+    color: white;
+    box-shadow: 0 5px #414e68;
+}
+
+button.Big {
+    grid-column: span 2;
+    background-color: #d03f2f;
+    color: white;
+    box-shadow: 0 5px #93261a;
+}
+/* @media screen and (max-width: 600px) {
+    .calculator {
+        width: 280px;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    button.equals {
+        grid-column: span 3;
+    }
+} */
+
+@media only screen and (min-width: 1200px) {
+    .calculator {
+        width: 350px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(4, 82px);
+        grid-template-rows: repeat(5, 65px);
+    }
+    
+    .grid-container > button {
+        margin: 0 8px;
+        padding: 5px 0;
+    }
+    button:nth-child(17), button:nth-child(4) {
+        padding: 13px 0;
+    }    
+}
